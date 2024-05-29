@@ -35,6 +35,7 @@ class Grupo(models.Model):
     numero_de_retiro = models.IntegerField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
+    valor_retiro = models.DecimalField(max_digits=10, decimal_places=2)
     parroquia = models.ForeignKey(Parroquia, on_delete=models.CASCADE)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE)
     pais = models.ForeignKey(Pais, on_delete=models.CASCADE)
@@ -43,7 +44,7 @@ class Grupo(models.Model):
     formulario_inscripcion = models.URLField()
     correo_electronico = models.EmailField()
     casa_de_retiro = models.CharField(max_length=255)
-    poster = models.ImageField(upload_to='/Emaus/Calendario/static/img/posters')
+    poster = models.ImageField(upload_to='Emaus/Calendario/static/img/posters')
 
     def __str__(self):
         return self.nombre
