@@ -28,7 +28,7 @@ class Coordinador(models.Model):
     parroquia = models.ForeignKey(Parroquia, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre
+        return str(self.user)
 
 class Grupo(models.Model):
     nombre = models.CharField(max_length=255)
