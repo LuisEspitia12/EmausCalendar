@@ -1,179 +1,116 @@
 /*header.html*/
+/* Estilo general */
 body {
-    background-color: #e9e8dd;
+    background-color: #f0f0f0; /* Color de fondo claro y neutral */
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
 }
 
+/* Estilos para el encabezado */
+.header {
+    background-color: #a2d5f2; /* Azul cielo claro para el encabezado */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
 
-nav {
-    background-color: #f36944 ;
-    padding: 10px 20px;
+/* Contenedor para centrar el contenido */
+.container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20px; /* Espaciado interno */
+}
+
+/* Estilo para el título del sitio */
+.site-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #000080; /* Azul Marino para complementar el azul claro */
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Estilos para la navegación */
+.nav {
+    display: flex;
     align-items: center;
 }
 
+/* Estilos para los enlaces de la navegación */
 .nav-links {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    gap: 20px; /* Espacio entre los elementos de la lista */
 }
 
-.nav-links li {
-    margin-right: 20px;
-}
-
+/* Estilos para los enlaces */
 .nav-links li a {
-    color: #fff;
+    color: #000080; /* Azul Marino */
+    background-color: #f0f0f0; /* Gris Claro */
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
 }
 
+/* Efecto al pasar el cursor sobre los enlaces */
 .nav-links li a:hover {
-    color: #111110; /* Cambia el color al pasar el cursor */
+    background-color: #dcdfe1; /* Color gris más oscuro para el hover */
+    color: #000080; /* Mantiene el color del texto en azul marino */
 }
 
 
 
 /*Index.html*/
-.container {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(3, minmax(100px, 300px)); /* O auto-fit */
-    gap: 20px; /* Esto añade un espacio entre las columnas */
-    padding: 10px; /* Espacio interno del contenedor */
-    
-}
-
+/* Estilos generales para la card */
 .card {
-    --bg-card: #f8f8fc;
-    --primary: #28d945;
-    --primary-800: #35951d;
-    --primary-shadow: #136510;
-    --light: #0e0d0d;
-    --zinc-800: #fa2323;
-    --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
-  
-    position: relative;
-  
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  
-    padding: 1rem;
-    width: 14rem;
-    background-color: var(--bg-card);
-  
-    border-radius: 1rem;
+    width: 300px; /* Ajusta el tamaño según lo necesites */
+    border-radius: 8px;
+    overflow: hidden; /* Oculta el contenido desbordante para mantener los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra para darle profundidad */
+    margin: 20px auto; /* Centra la card horizontalmente */
+    background-color: #fff; /* Fondo blanco para la card */
+    font-family: Arial, sans-serif; /* Fuente básica */
   }
   
-  .image_container {
-    overflow: hidden;
-    cursor: pointer;
-  
-    position: relative;
-    z-index: 8;
-  
+  /* Estilos para la imagen */
+  .card .poster img {
     width: 100%;
-    height: 8rem;
-    background-color: var(--primary-800);
-  
-    border-radius: 0.5rem;
+    max-height: 350px; /* Establece la altura máxima de la imagen */
+    object-fit: cover; /* Mantiene la proporción y recorta la imagen para ajustarse al contenedor */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
   
-  .image_container .image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    width: 3rem;
-    fill: var(--light);
+  /* Estilos para la información */
+  .card .info {
+    padding: 16px; /* Espacio interno */
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
   
-  .title {
-    overflow: clip;
-  
-    width: 100%;
-  
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--light);
-    text-transform: capitalize;
-    text-wrap: nowrap;
-    text-overflow: ellipsis;
+  /* Estilos para el título */
+  .card .info .title h3 {
+    margin: 0;
+    font-size: 18px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
   }
   
-  .size {
-    font-size: 1.5rem;
-    color: var(--light);
-  }
-  
-  .list-size {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin-top: 0.25rem;
-  }
-  
-  .list-size .item-list {
+  /* Estilos para los detalles */
+  .card .info .details ul {
     list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
   }
   
-  .list-size .item-list-button {
-    cursor: pointer;
-    padding: 0.5rem;
-    background-color: var(--zinc-800);
-  
-    font-size: 0.75rem;
-    color: var(--light);
-  
-    border: 2px solid var(--zinc-800);
-    border-radius: 0.25rem;
-  
-    transition: all 0.3s ease-in-out;
-  }
-  
- 
-
-  
-  .action {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .price {
-    font-size: 0.8rem;
-    font-weight: 900;
-    color: var(--light);
-  }
-  
-  .cart-button {
-    cursor: pointer;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-  
-    padding: 0.5rem;
-    width: 100%;
-    background-image: var(--bg-linear);
-  
-    font-size: 1rem;
-    font-weight: 900;
-    color: var(--light);
-    text-wrap: nowrap;
-  
-    border: 2px solid hsla(262, 83%, 58%, 0.5);
-    border-radius: 0.5rem;
-    box-shadow: inset 0 0 0.25rem 1px var(--light);
-  }
-  
-  .cart-button .cart-icon {
-    width: 1rem;
+  .card .info .details li {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
   }
   
