@@ -2,30 +2,81 @@
 {% load static %}
 
 {% block content %}
+<section class="search-background">
+    <div class="search-container">
+      <h2>Encuentra tu Retiro de Emaus</h2>
+      <form class="search-form">
+        <!-- Tipo de retiro -->
+        <div class="form-group">
+          <label for="tipo-retiro">Tipo de Retiro</label>
+          <select id="tipo-retiro" name="tipo-retiro">
+            <option value="">Seleccione</option>
+            <option value="retiro1">Hombres</option>
+            <option value="retiro2">Mujeres</option>
+            <option value="retiro3">Parejas</option>
+            <option value="retiro4">Effeta</option>
+            <option value="retiro5">Revolución Juvenil</option>
+            <option value="retiro6">Semillitas</option>
+            <!-- Agrega más opciones según sea necesario -->
+          </select>
+        </div>
+  
+        <!-- Ciudad -->
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <select id="ciudad" name="ciudad">
+            <option value="">Seleccione</option>
+            {% for ciudad in ciudades %}
+            <option value="ciudad1">{{ ciudad.nombre }}</option>
+            {% endfor %}
+            <!-- Agrega más opciones según sea necesario -->
+          </select>
+        </div>
+  
+        <!-- Fecha de inicio -->
+        <div class="form-group">
+          <label for="fecha-inicio">Fecha Inicio</label>
+          <input type="date" id="fecha-inicio" name="fecha-inicio">
+        </div>
+  
+        <!-- Fecha Final -->
+        <div class="form-group">
+          <label for="fecha-final">Fecha Final</label>
+          <input type="date" id="fecha-final" name="fecha-final">
+        </div>
+  
+        <!-- Botón de buscar -->
+        <div class="form-group">
+          <button type="submit" class="btn">Buscar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+     
 <section>
- <div class= "card">
-
-  <div class= "poster">
-    <img src="/Emaus/Calendario/static/img/posters/retiroSan.jpg" alt="Descripción de la imagen">
-  </div>
-
-  <div class= "info">
-
-    <div class= "title">
-        <h3>Parroquia San Silvestre</h3>    
+  <div class="card-container">
+    {% for grupo in grupos %}
+    <div class="card">
+        <div class="poster">
+            <img src="{{ grupo.poster.url }}" alt="Poster de {{ grupo.nombre }}">
+        </div>
+        <div class="info">
+            <div class="title">
+                <h3>Parroquia {{ grupo.parroquia.nombre }}</h3>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>{{ grupo.fecha_inicio|date:"j" }} al {{ grupo.fecha_fin|date:"j" }} de {{ grupo.fecha_fin|date:"F" }}</li>
+                    <li>{{ grupo.nombre }}</li>
+                    <li>${{ grupo.valor_retiro|floatformat:0 }}</li>
+                    <li><a href="{{ grupo.formulario_inscripcion }}" class="btn">Inscríbete</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <div class= "details">
-      <ul>
-        <li>6, 7 y 8 de Junio</li>
-        <li>Hombres</li>
-        <li>$450.000</li>
-    </ul>
-    </div>
-
-  </div>
- </div>
-
+    {% endfor %}
+</div>
+ 
 </section>
 
 {% endblock %}

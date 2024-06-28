@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Grupo, Ciudad
 
-# Create your views here.
-def home(request):
-    return render(request, 'index.html')
+def lista_grupos(request):
+    grupos = Grupo.objects.all()
+    ciudades = Ciudad.objects.all()
+    return render(request, 'index.html', {'grupos': grupos, 'ciudades': ciudades})
