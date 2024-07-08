@@ -153,73 +153,96 @@ height: 150px; /* Altura de la imagen */
 /*------------------Search-container---------------*/
 .search-background {
   background-color: #f5f5f5; /* Color de fondo de la sección */
-  padding: 20px; /* Espaciado interno */
+  padding: 40px 20px; /* Espaciado interno mayor */
   text-align: center; /* Centra el contenido */
 }
 
 .search-container {
-  max-width: 800px; /* Anchura máxima del contenedor */
+  max-width: 1200px; /* Anchura máxima del contenedor */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
+  background-color: #fff; /* Fondo blanco para el contenedor */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .search-container h2 {
   margin-bottom: 20px; /* Espaciado inferior */
-  font-size: 24px; /* Tamaño del texto del título */
+  font-size: 28px; /* Tamaño del texto del título */
   color: #333; /* Color del texto del título */
 }
 
 .search-form {
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-  justify-content: space-between; /* Distribuye los elementos */
-  gap: 10px; /* Espaciado entre los elementos */
+  flex-direction: column; /* Los elementos internos se colocan en columna */
+  gap: 20px; /* Espaciado entre los elementos */
 }
 
 .form-group {
-  flex: 1; /* Cada elemento toma igual espacio */
-  min-width: 150px; /* Anchura mínima para evitar que se encojan demasiado */
   display: flex;
   flex-direction: column; /* Los elementos internos se colocan en columna */
 }
 
 .form-group label {
   margin-bottom: 5px; /* Espaciado inferior */
-  font-size: 14px; /* Tamaño del texto del label */
+  font-size: 16px; /* Tamaño del texto del label */
   color: #666; /* Color del texto del label */
 }
 
 .form-group select, .form-group input {
-  padding: 8px; /* Espaciado interno */
-  font-size: 14px; /* Tamaño del texto */
+  padding: 12px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño del texto */
   border: 1px solid #ddd; /* Borde */
   border-radius: 4px; /* Bordes redondeados */
   box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el tamaño especificado */
 }
 
+h3 {
+  font-size: 20px; /* Tamaño del texto */
+  color: #333; /* Color del texto */
+  margin-top: 20px; /* Espaciado superior */
+  text-align: left; /* Alineación a la izquierda */
+}
+
 .btn {
-  padding: 10px 20px; /* Espaciado interno del botón */
-  font-size: 14px; /* Tamaño del texto */
+  padding: 12px 20px; /* Espaciado interno del botón */
+  font-size: 16px; /* Tamaño del texto */
   color: #fff; /* Color del texto */
   background-color: #007bff; /* Color de fondo */
   border: none; /* Sin borde */
   border-radius: 4px; /* Bordes redondeados */
   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color */
 }
 
 .btn:hover {
   background-color: #0056b3; /* Color de fondo al pasar sobre el botón */
 }
 
-/* Estilo responsivo */
-@media (max-width: 768px) {
-  .search-form {
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+@media (max-width: 600px) {
+  .search-container {
+    padding: 15px; /* Reduce el espaciado interno en móviles */
   }
 
-  .form-group {
-    width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+  .search-container h2 {
+    font-size: 24px; /* Tamaño del texto más pequeño en móviles */
+  }
+
+  .search-form {
+    gap: 15px; /* Menos espacio entre elementos en móviles */
+  }
+
+  .form-group select, .form-group input {
+    padding: 10px; /* Menos espaciado interno en móviles */
+    font-size: 14px; /* Tamaño del texto más pequeño en móviles */
+  }
+
+  .btn {
+    padding: 10px 15px; /* Menos espaciado interno del botón en móviles */
+    font-size: 14px; /* Tamaño del texto más pequeño en móviles */
   }
 }
+
 
 /*------------------End-Search-container-----------*/
 /*--------------------card-container---------------*/
