@@ -31,3 +31,6 @@ def lista_grupos(request):
         'grupos': grupos,
         'hay_resultados': hay_resultados  # Pasa la variable a la plantilla
     })
+    
+def about(request):
+    return render(request, 'about.html')
