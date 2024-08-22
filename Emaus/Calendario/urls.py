@@ -6,5 +6,5 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('',views.lista_grupos, name="home"),
-    path('about',views.about)
+    path('about',views.about, name="about")
 ]

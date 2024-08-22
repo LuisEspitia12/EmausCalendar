@@ -158,7 +158,7 @@ height: 150px; /* Altura de la imagen */
 }
 
 .search-container {
-  max-width: 1200px; /* Anchura máxima del contenedor */
+  max-width: 1000px; /* Anchura máxima del contenedor */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   background-color: #fff; /* Fondo blanco para el contenedor */
   padding: 20px; /* Espaciado interno */
@@ -174,8 +174,8 @@ height: 150px; /* Altura de la imagen */
 
 .search-form {
   display: flex;
-  flex-direction: column; /* Los elementos internos se colocan en columna */
-  gap: 20px; /* Espaciado entre los elementos */
+  flex-direction: row; /* Los elementos internos se colocan en la misma dirección */
+  gap: 15px; /* Espaciado entre los elementos */
 }
 
 .form-group {
@@ -185,7 +185,7 @@ height: 150px; /* Altura de la imagen */
 
 .form-group label {
   margin-bottom: 5px; /* Espaciado inferior */
-  font-size: 16px; /* Tamaño del texto del label */
+  font-size: 10px; /* Tamaño del texto del label */
   color: #666; /* Color del texto del label */
 }
 
@@ -198,17 +198,20 @@ height: 150px; /* Altura de la imagen */
 }
 
 h3 {
-  font-size: 20px; /* Tamaño del texto */
+  font-size: 5px; /* Tamaño del texto */
   color: #333; /* Color del texto */
   margin-top: 20px; /* Espaciado superior */
-  text-align: left; /* Alineación a la izquierda */
+  text-align: center; /* Alineación a la izquierda */
 }
-
+.between-search{
+  display: flex;
+  flex-direction: row;
+}
 .btn {
   padding: 12px 20px; /* Espaciado interno del botón */
   font-size: 16px; /* Tamaño del texto */
   color: #fff; /* Color del texto */
-  background-color: #007bff; /* Color de fondo */
+  background-color: #258efd; /* Color de fondo */
   border: none; /* Sin borde */
   border-radius: 4px; /* Bordes redondeados */
   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
@@ -216,7 +219,7 @@ h3 {
 }
 
 .btn:hover {
-  background-color: #0056b3; /* Color de fondo al pasar sobre el botón */
+  background-color: #a0caf7; /* Color de fondo al pasar sobre el botón */
 }
 
 @media (max-width: 600px) {
@@ -340,4 +343,57 @@ h3 {
   display: flex;
   align-items: center;
   
+}
+/*-----------------------------------------------------End-about.html------------------------------------------------*/
+/*-----------------------------------------------------login.html------------------------------------------------*/
+.cont-log{
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.login-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.login-container button:hover {
+  background-color: #0056b3;
+}
+.login-container a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+.login-container a:hover {
+  text-decoration: underline;
 }
