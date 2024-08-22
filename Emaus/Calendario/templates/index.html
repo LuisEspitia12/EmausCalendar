@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load form_tags %}
 {% block content %}
 <section class="search-background">
     <div class="search-container">
@@ -11,15 +11,17 @@
 
             {{ form.ciudad.label_tag }}  <!-- Etiqueta del campo -->
             {{ form.ciudad }}  <!-- Campo de selección de ciudad -->
-
-            <h3>Periodo de búsqueda</h3>  <!-- Texto personalizado antes de las fechas -->
-
-            {{ form.fecha_inicio.label_tag }}  <!-- Etiqueta del campo -->
-            {{ form.fecha_inicio }}  <!-- Campo de fecha de inicio -->
-
-            {{ form.fecha_final.label_tag }}  <!-- Etiqueta del campo -->
-            {{ form.fecha_final }}  <!-- Campo de fecha final -->
-
+            <div class="between-search">
+                <!--<h3>Periodo de búsqueda</h3>   Texto personalizado antes de las fechas -->
+                <div class="begin-search">
+                    {{ form.fecha_inicio.label_tag }}  <!-- Etiqueta del campo -->
+                    {{ form.fecha_inicio|add_class:"datepicker" }}  <!-- Campo de fecha de inicio -->
+                </div>
+                <div class="end-search">
+                    {{ form.fecha_final.label_tag }}  <!-- Etiqueta del campo -->
+                    {{ form.fecha_final|add_class:"datepicker" }}  <!-- Campo de fecha final -->
+                </div>
+            </div>
             <div class="form-group">
                 <button type="submit" class="btn">Buscar</button>
             </div>

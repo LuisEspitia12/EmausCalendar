@@ -9,3 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+  $(document).ready(function() {
+    // Inicializar el datepicker con el idioma español
+    $('.datepicker').datepicker({
+        language: 'es',
+        format: 'yyyy-mm-dd',  // Asegúrate de que el formato de fecha sea el correcto
+    });
+});
